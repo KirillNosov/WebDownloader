@@ -1,0 +1,18 @@
+c:\users\tatyana\documents\visual studio 2015\Projects\WebDownloader\WebDownloader\bin\Debug\WebDownloader.exe.config
+c:\users\tatyana\documents\visual studio 2015\Projects\WebDownloader\WebDownloader\bin\Debug\WebDownloader.exe
+c:\users\tatyana\documents\visual studio 2015\Projects\WebDownloader\WebDownloader\bin\Debug\WebDownloader.pdb
+c:\users\tatyana\documents\visual studio 2015\Projects\WebDownloader\WebDownloader\obj\Debug\WebDownloader.csprojResolveAssemblyReference.cache
+c:\users\tatyana\documents\visual studio 2015\Projects\WebDownloader\WebDownloader\obj\Debug\WebDownloader.exe
+c:\users\tatyana\documents\visual studio 2015\Projects\WebDownloader\WebDownloader\obj\Debug\WebDownloader.pdb
+E:\ingate\WebDownloader\WebDownloader\bin\Debug\WebDownloader.exe.config
+E:\ingate\WebDownloader\WebDownloader\obj\Debug\WebDownloader.exe
+E:\ingate\WebDownloader\WebDownloader\obj\Debug\WebDownloader.pdb
+E:\ingate\WebDownloader\WebDownloader\bin\Debug\WebDownloader.exe
+E:\ingate\WebDownloader\WebDownloader\bin\Debug\WebDownloader.pdb
+E:\ingate\WebDownloader\WebDownloader\obj\Debug\WebDownloader.csprojResolveAssemblyReference.cache
+E:\ingate\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.exe.config
+E:\ingate\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.exe
+E:\ingate\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.pdb
+E:\ingate\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.exe
+E:\ingate\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.pdb
+E:\ingate\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.csprojResolveAssemblyReference.cache
