@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -20,6 +21,8 @@ namespace WebDownloader
         public int crawlDelay { get; set; }
 
         public bool isLock { get; set; }
+
+        public bool isAvailable;
 
         public Dictionary<string, Page> pages = new Dictionary<string, Page>();
 
@@ -40,6 +43,7 @@ namespace WebDownloader
             this.name = GetDomain(url);
             crawlDelay = 0;
             isLock = false;
+            isAvailable = IsAvailable();
             pages.Add(url, new Page(url));
         }
 
@@ -94,6 +98,19 @@ namespace WebDownloader
             string result = url.Replace("https://", "");
             result = result.Replace("http://", "");
             return result;
+        }
+        public bool IsAvailable()
+        {
+            IPStatus status = IPStatus.Unknown;
+            try
+            {
+                status = new Ping().Send(name).Status;
+            }
+            catch { }
+            if (status == IPStatus.Success)
+                return true;
+            else
+                return false;
         }
 
         public static string GetDomain(string url)

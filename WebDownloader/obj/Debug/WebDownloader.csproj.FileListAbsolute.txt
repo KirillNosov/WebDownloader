@@ -16,3 +16,9 @@ E:\ingate\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader
 E:\ingate\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.exe
 E:\ingate\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.pdb
 E:\ingate\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.csprojResolveAssemblyReference.cache
+E:\ingate_git\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.exe.config
+E:\ingate_git\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.exe
+E:\ingate_git\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.pdb
+E:\ingate_git\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.exe
+E:\ingate_git\WebDownloader — копия (2)\WebDownloader\bin\Debug\WebDownloader.pdb
+E:\ingate_git\WebDownloader — копия (2)\WebDownloader\obj\Debug\WebDownloader.csprojResolveAssemblyReference.cache

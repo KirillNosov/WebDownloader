@@ -19,11 +19,8 @@ namespace WebDownloader
         {
             outPath = path;
         }
+
         public static List<string> log = new List<string>();
-        public List<string> GetLog()
-        {
-            return (log);
-        }
 
         public async Task LoadDomains(Domain[] domains)
         {
@@ -34,12 +31,15 @@ namespace WebDownloader
                 pages = 0;
                 foreach (var domain in domains)
                 {
+                    if (!domain.IsAvailable())
+                        continue;
                     tasks.Add(LoadDomain(domain));
                     pages += domain.GetPages(1).Count();
                 }
                 await Task.WhenAll(tasks);
             }
             while (pages > 0);
+            WorkWithFile.saveLog(log, outPath);
         }
 
         public async Task LoadDomain(Domain domain)
@@ -76,12 +76,14 @@ namespace WebDownloader
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 Console.WriteLine(page.url);
-                log.Add(page.url);
+                log.Add($"{DateTime.Now.ToString()}\t OK\t {page.url}");
                 page.content = await response.Content.ReadAsStringAsync();
                 page.isDownloaded = true;
                 domain.AddPages(page.GetLinks());
                 WorkWithFile.SavePage(domain, page, outPath);
             }
+            else
+                log.Add($"{DateTime.Now.ToString()}\tERR\t {page.url}  !Ошибка: {response.StatusCode.ToString()}");
         }
 
         public async Task SetCrawlDelaysAsync(Domain[] domains)
@@ -89,7 +91,10 @@ namespace WebDownloader
             List<Task> tasks = new List<Task>();
             foreach (var domain in domains)
             {
-                tasks.Add(LoadCrawlDelayFromRobotsTXTAsync(domain));
+                if (domain.IsAvailable())
+                    tasks.Add(LoadCrawlDelayFromRobotsTXTAsync(domain));
+                else
+                    log.Add($"{DateTime.Now.ToString()}\tERR\t {domain.url} !Сервер недоступен");
             }
             await Task.WhenAll(tasks);
         }
@@ -98,7 +103,8 @@ namespace WebDownloader
         {
             var httpClient = new HttpClient();
             HttpResponseMessage response;
-            response = await httpClient.GetAsync($"{domain.url}/robots.txt");
+            string url = $"{domain.url}/robots.txt";
+            response = await httpClient.GetAsync(url);
             string content = await response.Content.ReadAsStringAsync();
 
             //if (domain.url == "http://stampard.ru/")
@@ -120,6 +126,8 @@ namespace WebDownloader
                     }
                 }
             }
+            else
+                log.Add($"{DateTime.Now.ToString()}\tERR\t {url}  Ошибка: {response.StatusCode.ToString()}");
         }
 
         async Task Lock(Domain domain)
